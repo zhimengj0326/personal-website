@@ -6,7 +6,7 @@ export async function GET(context) {
   const blog = await getCollection("blog");
   return rss({
     title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
+    description: "Deep insights into machine learning theory and practice, sharing industry experience in AI production deployment, and strategic analysis of AI technology's business value and applications. Covering ML system design, model deployment optimization, business value quantification, and more.",
     site: context.site,
     // 添加更多元数据以提高可发现性
     language: "en",
