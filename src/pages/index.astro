@@ -104,7 +104,7 @@ const last_posts = posts.slice(0, 3);
   <div class="overflow-y-auto max-h-96 border rounded-lg p-4 bg-base-200">
     <div class="space-y-4">
       <div class="border-l-4 border-primary pl-4">
-        <div class="font-semibold text-primary">[2025/5]</div>
+        <div class="font-semibold text-primary">[2025/8]</div>
         <div>One paper is accepted by EMNLP 2025 (Findings).</div>
       </div>
 
@@ -337,7 +337,6 @@ const last_posts = posts.slice(0, 3);
 
   <!-- 访客地图 -->
   <div class="mt-10 mb-10 text-center">
-    <h3 class="text-2xl font-bold mb-4">Visitor Map</h3>
     
     <!-- 主要地图 - 使用更可靠的嵌入方法 -->
     <div class="map-container mb-4">
@@ -351,12 +350,14 @@ const last_posts = posts.slice(0, 3);
         marginwidth="0"
         style="border: 1px solid #ddd; border-radius: 8px; background: #f8f9fa;"
         title="Visitor Map"
-        loading="lazy">
+        loading="lazy"
+        onerror="this.style.display='none'"
+        onload="this.style.display='block'">
       </iframe>
     </div>
     
-    <!-- 备用地图图片 -->
-    <div class="map-container mb-4">
+    <!-- 备用地图图片 - 只在交互式地图失败时显示 -->
+    <div class="map-container mb-4" id="fallback-map" style="display: none;">
       <img 
         src="https://clustrmaps.com/map_v2.png?cl=276bba&w=300&t=n&d=_AahTWe7r3JGq_cYfRXPi0HQTKOD3NUb8lqBF0iSBCg&co=ffffff&ct=120808" 
         alt="Visitor Map" 
@@ -378,4 +379,44 @@ const last_posts = posts.slice(0, 3);
       <p>This map shows visitors from around the world</p>
     </div>
   </div>
+
+  <script>
+    // 智能地图显示处理
+    document.addEventListener('DOMContentLoaded', function() {
+      const iframe = document.querySelector('iframe');
+      const fallbackMap = document.getElementById('fallback-map');
+      
+      // 检查iframe是否加载成功
+      if (iframe) {
+        iframe.addEventListener('load', function() {
+          // iframe加载成功，隐藏备用地图
+          if (fallbackMap) {
+            fallbackMap.style.display = 'none';
+          }
+        });
+        
+        iframe.addEventListener('error', function() {
+          // iframe加载失败，显示备用地图
+          if (fallbackMap) {
+            fallbackMap.style.display = 'block';
+          }
+        });
+        
+        // 设置超时检查
+        setTimeout(function() {
+          if (iframe.contentDocument && iframe.contentDocument.body) {
+            // iframe内容加载成功
+            if (fallbackMap) {
+              fallbackMap.style.display = 'none';
+            }
+          } else {
+            // iframe加载失败，显示备用地图
+            if (fallbackMap) {
+              fallbackMap.style.display = 'block';
+            }
+          }
+        }, 3000); // 3秒后检查
+      }
+    });
+  </script>
 </BaseLayout>
