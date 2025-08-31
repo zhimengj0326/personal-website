@@ -12,52 +12,45 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-5xl font-bold">I'm Zhimeng (Stephen) Jiang</div>
+    <div class="text-3xl py-3 font-bold">Software Engineer, Google</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        I am a software engineer–machine learning at Google. Previously, I was a Staff Research Scientist at Visa Research. 
+        I received my Ph.D. in Department of Computer Science & Engineering at Texas A&M University, working with Prof. Xia (Ben) Hu. 
+        I received my B.S. degree from Harbin Institute of Technology (HIT), and M.S. degree from University of Science and Technology of China (USTC) in electrical engineering.
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
+      <a class="btn" href="mailto:zhimengj0326@gmail.com"> Contact me</a>
+      <a href="/cv.pdf" target="_blank" class="btn btn-outline ml-5">
+        Curriculum Vitae
       </a>
+    </div>
+    
+    <div class="mt-4">
+      <p class="text-lg">Email: zhimengj0326 at gmail dot com</p>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">Research Interests</div>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  <div class="mb-10 text-justify">
+    <p class="text-lg mb-4">
+      My research interests lie in the broad area of:
+    </p>
+    <ul class="list-disc mx-6 text-lg space-y-2">
+      <li><strong>Trustworthy Machine Learning</strong> - Ensuring AI systems are fair, robust, and interpretable</li>
+      <li><strong>Graph Learning</strong> - Advanced graph neural networks and representation learning</li>
+      <li><strong>Efficient Machine Learning</strong> - Memory-efficient training and model optimization</li>
+      <li><strong>GenAI</strong> - Generative AI systems and large language models</li>
+    </ul>
+  </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5">Latest from blog</div>
   </div>
 
   {
@@ -75,4 +68,276 @@ const last_posts = posts.slice(0, 3);
       </>
     ))
   }
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">News</div>
+  </div>
+
+  <div class="overflow-y-auto max-h-96 border rounded-lg p-4 bg-base-200">
+    <div class="space-y-4">
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2025/5]</div>
+        <div>One paper is accepted by EMNLP 2025 (Findings).</div>
+      </div>
+
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2025/5]</div>
+        <div>One paper is accepted by ACL 2025 (Main).</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2025/5]</div>
+        <div>One paper is accepted by KDD 2025.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2025/5]</div>
+        <div>Two papers are accepted by ICML 2025.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2025/2]</div>
+        <div>One paper is accepted by CPAL 2025 Oral.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2024/12]</div>
+        <div>One paper on <a href="https://openreview.net/pdf?id=hJHf7PCuVt" class="link link-primary">Counterfactual Fairness</a> is accepted by TMLR.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2024/12]</div>
+        <div>Our <a href="https://arxiv.org/abs/2303.10158" class="link link-primary">data-centric AI survey</a> paper is accepted by ACM Computing Surveys.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2024/09]</div>
+        <div>One paper is accepted by NeurIPS 2024.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2024/07]</div>
+        <div>Our paper <a href="https://arxiv.org/pdf/2310.01508" class="link link-primary">CODA</a> won <a href="https://www.linkedin.com/posts/informs-quality-statistics-and-reliability-qsr_icqsr2024-industrialquality-productionoptimization-activity-7224142281002401793-sG72?utm_source=share&utm_medium=member_ios" class="link link-primary"><span class="text-red-600">INFORMS ICQSR'24 best paper competition award</span></a>.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2024/5]</div>
+        <div>Two papers are accepted by ICML 2024, where our spotlight (<span class="text-red-600">3.5%</span>) paper <a href="https://arxiv.org/abs/2401.01325" class="link link-primary">Self-Extend</a> is highlighted during <a href="https://www.youtube.com/watch?v=TV7qCk1dBWA" class="link link-primary"><span class="text-red-600">Google I/O</span></a> session.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/12]</div>
+        <div>One paper is accepted by AAAI 2024.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/10]</div>
+        <div>One paper is accepted by WSDM 2024.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/10]</div>
+        <div>I have successfully passed my thesis defense.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/09]</div>
+        <div>Three papers are accepted by NeurIPS 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/08]</div>
+        <div>Give an invited tutorial on Machine Learning in Finance Workshop at KDD23. <a href="https://sites.google.com/view/kdd-mlf-2023/schedule?authuser=0" class="link link-primary">[Website]</a> <a href="http://zhimengj0326.github.io/files/Fairness_tutorial_KDD23@MLF.pdf" class="link link-primary">[Slides]</a> <a href="http://zhimengj0326.github.io/files/fairness_case_study.ipynb" class="link link-primary">[Code]</a></div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/07]</div>
+        <div>Receive Student Travel Grant Award from Texas A&M University.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/07]</div>
+        <div>Invited to serve as a PC member of LOG 2023 and AAAI 2024.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/06]</div>
+        <div>Invited to serve as Senior PC member of CIKM 2023 demo track.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/06]</div>
+        <div>One paper <a href="https://openreview.net/forum?id=SaVEXFuozg&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DTMLR%2FAuthors%23your-submissions))" class="link link-primary">DSpar</a> is accepted by TMLR.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/05]</div>
+        <div>Invited to serve as a PC member of WACV 2024 and reviewer for TMLR.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/05]</div>
+        <div>One paper <a href="https://openreview.net/forum?id=LjDFIWWVVa&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DTMLR%2FAuthors%23your-submissions)" class="link link-primary">Retiring ΔDP</a> is accepted by TMLR.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/05]</div>
+        <div>One paper on Real-Time Bidding is accepted by SIGKDD Explorations 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/04]</div>
+        <div>Two papers on Memory Efficient Training and Graph Augmentation are accepted by ICML 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/04]</div>
+        <div>One paper on Probabilistic Masked Attention Networks is accepted by IJCAI 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/03]</div>
+        <div>Invited to serve as a PC member of NeurIPS 2023, and reviewer for Neurocomputing.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/03]</div>
+        <div>One US patent on <a href="https://www.freepatentsonline.com/y2023/0089895.html" class="link link-primary">bid optimization</a>, developed in collaboration with Samsung, is online.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/01]</div>
+        <div>One paper on Hierarchy-Aware Multi-Hop Question Answering is accepted by WWW 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2023/01]</div>
+        <div>One paper on Fair Graph Representations is accepted by ICLR 2023 (Spotlight).</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/12]</div>
+        <div>Invited to serve as a PC member of KDD 2023, ICML 2023, and IJCAI 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/12]</div>
+        <div>Our paper on Real-Time Bidding is accepted by AAAI 2023 AI for Web Advertising Workshop.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/10]</div>
+        <div>Our demo paper BED won <a href="https://www.cikm2022.org/best-paper" class="link link-primary"><span class="text-red-600">Best Demo Paper Award</span></a> in CIKM 2022. <a href="https://www.youtube.com/watch?v=0tY31_cECCA" class="link link-primary">[Video]</a> <a href="https://files.atypon.com/acm/61117c16dd998b4450dcd4910c590fa5" class="link link-primary">[Talk]</a> <a href="https://arxiv.org/abs/2202.07503" class="link link-primary">[Paper]</a> <a href="https://guanchuwang.github.io/home/CIKM%20slide.pdf" class="link link-primary">[Slide]</a> <a href="https://github.com/datamllab/BED_main" class="link link-primary">[Code]</a></div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/10]</div>
+        <div>Thrilled to start my internship at Amazon Search (A9.com) <a href="https://amazonsearchqu.github.io/" class="link link-primary">QU team</a>.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/09]</div>
+        <div>Invited to serve as a PC member of LOG 2022 and SDM 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/09]</div>
+        <div>Thrilled to receive Student Travel Grant Award, Computer Science and Engineering, Texas A&M University, 2022.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/08]</div>
+        <div>Our real-time object detection based on MAX78000 is accepted by CIKM 2022 (demo).</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/07]</div>
+        <div>Our paper G-mixup won <a href="https://icml.cc/virtual/2022/awards_detail" class="link link-primary"><span class="text-red-600">Outstanding Paper Award</span></a> in ICML 2022.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/07]</div>
+        <div>Invited to serve as a PC member of WACV 2023 and AAAI 2023.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/06]</div>
+        <div>Invited talk from <a href="http://www.aitime.cn/" class="link link-primary">AI-Time</a>.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/05]</div>
+        <div>Thrilled to start my summer internship at Visa Research, work with <a href="https://usa.visa.com/about-visa/visa-research/huiyuan-chen.html" class="link link-primary">Dr. Huiyuan Chen</a> and <a href="https://usa.visa.com/about-visa/visa-research/hao-yang.html" class="link link-primary">Dr. Hao Yang</a>.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/05]</div>
+        <div>Our paper G-mixup is accepted by ICML 2022 (Long Presentation)!</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/03]</div>
+        <div>Invited to serve as a PC member of NeurIPS 2022.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/03]</div>
+        <div>Our real-time object detection based on MAX78000 for edge devices has been released! <a href="https://youtu.be/0tY31_cECCA" class="link link-primary">[Video]</a> <a href="https://arxiv.org/abs/2202.07503" class="link link-primary">[Paper]</a> <a href="https://github.com/datamllab/BED_main" class="link link-primary">[Code]</a></div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/01]</div>
+        <div>Two papers are accepted by ICLR 2022, <a href="https://openreview.net/forum?id=ecH2FKaARUp" class="link link-primary">[Label noise]</a> and <a href="https://openreview.net/forum?id=YigKlMJwjye" class="link link-primary">[Generalized Demographic Parity]</a>!</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/01]</div>
+        <div>Invited to serve as a PC member of ICML 2022.</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2022/01]</div>
+        <div>Our paper on Geometric Graph Representation Learning is accepted by WWW 2022!</div>
+      </div>
+      
+      <div class="border-l-4 border-primary pl-4">
+        <div class="font-semibold text-primary">[2020/05]</div>
+        <div>Thrilled to start my summer internship at Samsung Research America Ads AI team, supervised by <a href="https://scholar.google.com/citations?user=FPcI7HkAAAAJ&hl=en" class="link link-primary">Dr. Li Li</a> and <a href="https://scholar.google.com/citations?user=ngVttWUAAAAJ&hl=en" class="link link-primary">Dr. Rui Chen</a>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 访客地图 -->
+  <div class="mt-10 mb-10 text-center">
+    <!-- 主要地图 -->
+    <iframe 
+      src="//clustrmaps.com/map_v2.html?cl=276bba&w=300&t=n&d=_AahTWe7r3JGq_cYfRXPi0HQTKOD3NUb8lqBF0iSBCg&co=ffffff&ct=120808" 
+      width="300" 
+      height="200" 
+      frameborder="0" 
+      scrolling="no" 
+      marginheight="0" 
+      marginwidth="0"
+      style="border: 1px solid #ddd; border-radius: 8px;"
+      title="Visitor Map">
+    </iframe>
+    
+    <!-- 备用地图链接 -->
+    <div class="mt-4">
+      <a href="https://clustrmaps.com/site/1bw8k" target="_blank" rel="noopener noreferrer" class="link link-primary">
+        如果地图没有显示，点击这里查看访客地图
+      </a>
+    </div>
+    
+    <!-- 备用地图图片 -->
+    <div class="mt-4">
+      <img 
+        src="//clustrmaps.com/map_v2.png?cl=276bba&w=300&t=n&d=_AahTWe7r3JGq_cYfRXPi0HQTKOD3NUb8lqBF0iSBCg&co=ffffff&ct=120808" 
+        alt="Visitor Map" 
+        width="300" 
+        height="200"
+        style="border: 1px solid #ddd; border-radius: 8px;"
+        onerror="this.style.display='none'">
+    </div>
+  </div>
 </BaseLayout>
