@@ -79,6 +79,14 @@ const last_posts = posts.slice(0, 3);
 
   <div>
     <div class="text-3xl w-full font-bold mb-5">Latest from blog</div>
+    <div class="text-sm text-gray-600 mb-4">
+      📰 Subscribe to my blog updates via 
+      <a href="/rss.xml" target="_blank" class="link link-primary">RSS feed</a> 
+      or use readers like 
+      <a href="https://feedly.com" target="_blank" class="link link-primary">Feedly</a>, 
+      <a href="https://inoreader.com" target="_blank" class="link link-primary">Inoreader</a>, 
+      <a href="https://newsblur.com" target="_blank" class="link link-primary">NewsBlur</a>
+    </div>
   </div>
 
   {
@@ -386,17 +394,43 @@ const last_posts = posts.slice(0, 3);
       const iframe = document.querySelector('iframe');
       const fallbackMap = document.getElementById('fallback-map');
       
+      // 立即显示备用地图，因为ClustrMaps iframe通常会有问题
+      if (fallbackMap) {
+        fallbackMap.style.display = 'block';
+      }
+      
       // 检查iframe是否加载成功
       if (iframe) {
-        iframe.addEventListener('load', function() {
-          // iframe加载成功，隐藏备用地图
-          if (fallbackMap) {
-            fallbackMap.style.display = 'none';
+        // 尝试检测iframe是否真正加载了内容
+        const checkIframeContent = () => {
+          try {
+            // 检查iframe是否有内容且不是错误页面
+            if (iframe.contentDocument && 
+                iframe.contentDocument.body && 
+                !iframe.contentDocument.body.innerHTML.includes('refused to connect') &&
+                !iframe.contentDocument.body.innerHTML.includes('404')) {
+              // iframe真正加载成功，隐藏备用地图
+              if (fallbackMap) {
+                fallbackMap.style.display = 'none';
+              }
+              return true;
+            }
+          } catch (e) {
+            // 跨域错误，说明iframe没有真正加载
+            console.log('Iframe cross-origin error, showing fallback map');
           }
+          return false;
+        };
+        
+        // 监听iframe加载事件
+        iframe.addEventListener('load', function() {
+          // 延迟检查，确保内容真正加载
+          setTimeout(checkIframeContent, 1000);
         });
         
+        // 监听iframe错误事件
         iframe.addEventListener('error', function() {
-          // iframe加载失败，显示备用地图
+          console.log('Iframe error, showing fallback map');
           if (fallbackMap) {
             fallbackMap.style.display = 'block';
           }
@@ -404,18 +438,13 @@ const last_posts = posts.slice(0, 3);
         
         // 设置超时检查
         setTimeout(function() {
-          if (iframe.contentDocument && iframe.contentDocument.body) {
-            // iframe内容加载成功
-            if (fallbackMap) {
-              fallbackMap.style.display = 'none';
-            }
-          } else {
-            // iframe加载失败，显示备用地图
+          if (!checkIframeContent()) {
+            // 如果iframe没有真正加载成功，显示备用地图
             if (fallbackMap) {
               fallbackMap.style.display = 'block';
             }
           }
-        }, 3000); // 3秒后检查
+        }, 2000); // 2秒后检查
       }
     });
   </script>

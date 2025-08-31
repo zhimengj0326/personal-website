@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout sideBarActiveItemID="blog">
+  <div class="pb-12 mt-5">
+    <div class="text-4xl font-bold mb-8">Subscribe to My Blog</div>
+    
+    <div class="prose max-w-none">
+      <p class="text-lg mb-6">
+        Stay updated with my latest research, insights, and thoughts on Machine Learning, AI, and Computer Science.
+      </p>
+      
+      <div class="bg-base-200 p-6 rounded-lg mb-8">
+        <h3 class="text-2xl font-bold mb-4">📡 RSS Feed</h3>
+        <p class="mb-4">My blog RSS feed URL:</p>
+        <div class="bg-base-100 p-4 rounded border">
+          <code class="text-primary">https://www.zhimengjiang.com/rss.xml</code>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">
+          Copy this URL and add it to your favorite RSS reader to get automatic updates.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title">🌐 Web-based Readers</h3>
+            <ul class="space-y-2">
+              <li><a href="https://feedly.com" target="_blank" class="link link-primary">Feedly</a> - Popular RSS reader with mobile apps</li>
+              <li><a href="https://inoreader.com" target="_blank" class="link link-primary">Inoreader</a> - Advanced features and customization</li>
+              <li><a href="https://newsblur.com" target="_blank" class="link link-primary">NewsBlur</a> - Social RSS reading</li>
+              <li><a href="https://theoldreader.com" target="_blank" class="link link-primary">The Old Reader</a> - Simple and clean interface</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title">📱 Mobile Apps</h3>
+            <ul class="space-y-2">
+              <li><strong>iOS:</strong> Feedly, Reeder, NetNewsWire</li>
+              <li><strong>Android:</strong> Feedly, Inoreader, FeedMe</li>
+              <li><strong>Cross-platform:</strong> Feedly, Inoreader</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-base-200 p-6 rounded-lg mb-8">
+        <h3 class="text-2xl font-bold mb-4">🔧 How to Subscribe</h3>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>Choose your preferred RSS reader from the options above</li>
+          <li>Sign up for an account (most are free)</li>
+          <li>Click "Add Feed" or "Subscribe"</li>
+          <li>Paste the RSS URL: <code class="text-primary">https://www.zhimengjiang.com/rss.xml</code></li>
+          <li>Start receiving updates automatically!</li>
+        </ol>
+      </div>
+      
+      <div class="bg-base-200 p-6 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4">📊 Why Subscribe?</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Get notified of new blog posts automatically</li>
+          <li>Never miss important research updates</li>
+          <li>Organize your reading with other favorite blogs</li>
+          <li>Read offline with mobile apps</li>
+          <li>Stay ahead in the AI/ML field</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
