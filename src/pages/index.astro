@@ -9,6 +9,34 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
 const last_posts = posts.slice(0, 3);
 ---
 
+<style>
+  .map-container {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  
+  .map-container iframe,
+  .map-container img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .map-container iframe:hover,
+  .map-container img:hover {
+    transform: scale(1.02);
+  }
+  
+  @media (max-width: 640px) {
+    .map-container iframe,
+    .map-container img {
+      width: 280px;
+      height: 180px;
+    }
+  }
+</style>
+
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
@@ -309,35 +337,45 @@ const last_posts = posts.slice(0, 3);
 
   <!-- 访客地图 -->
   <div class="mt-10 mb-10 text-center">
-    <!-- 主要地图 -->
-    <iframe 
-      src="//clustrmaps.com/map_v2.html?cl=276bba&w=300&t=n&d=_AahTWe7r3JGq_cYfRXPi0HQTKOD3NUb8lqBF0iSBCg&co=ffffff&ct=120808" 
-      width="300" 
-      height="200" 
-      frameborder="0" 
-      scrolling="no" 
-      marginheight="0" 
-      marginwidth="0"
-      style="border: 1px solid #ddd; border-radius: 8px;"
-      title="Visitor Map">
-    </iframe>
+    <h3 class="text-2xl font-bold mb-4">Visitor Map</h3>
+    
+    <!-- 主要地图 - 使用更可靠的嵌入方法 -->
+    <div class="map-container mb-4">
+      <iframe 
+        src="https://clustrmaps.com/map_v2.html?cl=276bba&w=300&t=n&d=_AahTWe7r3JGq_cYfRXPi0HQTKOD3NUb8lqBF0iSBCg&co=ffffff&ct=120808" 
+        width="300" 
+        height="200" 
+        frameborder="0" 
+        scrolling="no" 
+        marginheight="0" 
+        marginwidth="0"
+        style="border: 1px solid #ddd; border-radius: 8px; background: #f8f9fa;"
+        title="Visitor Map"
+        loading="lazy">
+      </iframe>
+    </div>
+    
+    <!-- 备用地图图片 -->
+    <div class="map-container mb-4">
+      <img 
+        src="https://clustrmaps.com/map_v2.png?cl=276bba&w=300&t=n&d=_AahTWe7r3JGq_cYfRXPi0HQTKOD3NUb8lqBF0iSBCg&co=ffffff&ct=120808" 
+        alt="Visitor Map" 
+        width="300" 
+        height="200"
+        style="border: 1px solid #ddd; border-radius: 8px; background: #f8f9fa;"
+        onerror="this.style.display='none'">
+    </div>
     
     <!-- 备用地图链接 -->
     <div class="mt-4">
       <a href="https://clustrmaps.com/site/1bw8k" target="_blank" rel="noopener noreferrer" class="link link-primary">
-        如果地图没有显示，点击这里查看访客地图
+        View Live Visitor Map
       </a>
     </div>
     
-    <!-- 备用地图图片 -->
-    <div class="mt-4">
-      <img 
-        src="//clustrmaps.com/map_v2.png?cl=276bba&w=300&t=n&d=_AahTWe7r3JGq_cYfRXPi0HQTKOD3NUb8lqBF0iSBCg&co=ffffff&ct=120808" 
-        alt="Visitor Map" 
-        width="300" 
-        height="200"
-        style="border: 1px solid #ddd; border-radius: 8px;"
-        onerror="this.style.display='none'">
+    <!-- 地图说明 -->
+    <div class="mt-2 text-sm text-gray-600">
+      <p>This map shows visitors from around the world</p>
     </div>
   </div>
 </BaseLayout>
